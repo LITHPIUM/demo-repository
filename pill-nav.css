@@ -1,0 +1,32 @@
+/* Lithodium pill navigation — static GitHub Pages implementation inspired by the supplied PillNav interaction. */
+.pill-nav-container{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:99;width:max-content;max-width:calc(100% - 32px)}
+.pill-nav{height:44px;display:flex;align-items:center;gap:5px;padding:3px;border:1px solid rgba(255,255,255,.09);border-radius:999px;background:rgba(13,14,16,.86);box-shadow:0 12px 35px rgba(0,0,0,.24);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.pill-logo{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,#a8ed55 0%,#65c94b 42%,#8e5bd6 100%);border:1px solid rgba(255,255,255,.12);box-shadow:0 0 18px rgba(112,225,83,.12),0 0 16px rgba(139,91,214,.08);transition:transform .28s cubic-bezier(.22,.7,.2,1),box-shadow .28s ease}
+.pill-logo:hover{transform:rotate(8deg) scale(1.04);box-shadow:0 0 22px rgba(112,225,83,.2),0 0 20px rgba(139,91,214,.14)}
+.pill-logo img{width:25px;height:25px;object-fit:contain;display:block}
+.pill-nav-items{display:flex;align-items:center;gap:3px;height:100%}
+.pill{position:relative;isolation:isolate;height:38px;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;overflow:hidden;border-radius:999px;color:#a8a8ad;text-decoration:none;font:600 11px/1 'DM Sans',sans-serif;letter-spacing:.01em;transition:color .25s ease,background .25s ease,transform .25s ease}
+.pill::before{content:"";position:absolute;z-index:-1;width:150px;height:150px;left:50%;top:100%;transform:translate(-50%,0) scale(.15);border-radius:50%;background:linear-gradient(135deg,#9fee55 0%,#71d24c 48%,#9b63df 100%);transition:transform .55s cubic-bezier(.2,.75,.2,1),top .55s cubic-bezier(.2,.75,.2,1)}
+.pill:hover{color:#08090a;transform:translateY(-1px)}
+.pill:hover::before,.pill:focus-visible::before{top:50%;transform:translate(-50%,-50%) scale(1)}
+.pill:focus-visible{outline:1px solid rgba(168,237,85,.7);outline-offset:2px}
+.pill.is-active{color:#08090a;background:linear-gradient(135deg,#a8ed55,#8f62d9)}
+.pill-github{gap:7px}
+.pill-github svg{width:13px;height:13px;fill:currentColor;transition:transform .25s ease}
+.pill-github:hover svg{transform:rotate(-8deg) scale(1.08)}
+.mobile-only{display:none}
+@media(max-width:768px){
+  .pill-nav-container{top:12px;width:calc(100% - 24px);max-width:none}
+  .pill-nav{width:100%;justify-content:space-between;height:46px}
+  .desktop-only{display:none!important}
+  .mobile-only{display:flex}
+  .mobile-menu-button{width:38px;height:38px;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;border:1px solid rgba(255,255,255,.08);border-radius:50%;background:#111216;color:#edebe6;cursor:pointer}
+  .mobile-menu-button span{display:block;width:15px;height:1px;background:currentColor;transition:transform .25s ease,opacity .2s ease}
+  .mobile-menu-button.is-open span:first-child{transform:translateY(3px) rotate(45deg)}
+  .mobile-menu-button.is-open span:last-child{transform:translateY(-3px) rotate(-45deg)}
+  .mobile-menu-popover{position:absolute;top:53px;left:0;right:0;display:flex;flex-direction:column;gap:3px;padding:4px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(13,14,16,.96);box-shadow:0 20px 45px rgba(0,0,0,.34);backdrop-filter:blur(18px);opacity:0;visibility:hidden;transform:translateY(-7px);transition:opacity .22s ease,transform .22s ease,visibility .22s ease}
+  .mobile-menu-popover.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .mobile-menu-popover a{padding:12px 14px;border-radius:12px;color:#a8a8ad;font:600 12px/1 'DM Sans',sans-serif;text-decoration:none;transition:color .2s ease,background .2s ease}
+  .mobile-menu-popover a:hover{color:#08090a;background:linear-gradient(135deg,#a8ed55,#9160d7)}
+}
+@media(prefers-reduced-motion:reduce){.pill,.pill::before,.pill-logo,.mobile-menu-popover,.mobile-menu-button span{transition:none}}
