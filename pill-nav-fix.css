@@ -1,0 +1,43 @@
+/* Lithodium navigation logo correction */
+.pill-nav-container .pill-logo {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  padding: 0;
+  margin: 0 10px 0 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  box-shadow: none;
+}
+
+.pill-nav-container .pill-logo img {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .pill-nav-container .pill-logo {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    margin-right: 7px;
+  }
+
+  .pill-nav-container .pill-logo img {
+    width: 27px;
+    height: 27px;
+    max-width: 27px;
+    max-height: 27px;
+  }
+}
