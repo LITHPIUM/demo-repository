@@ -1,43 +1,180 @@
-/* Lithodium navigation logo correction */
+/* Lithodium navigation correction — editorial, not a giant capsule */
+.pill-nav-container {
+  position: absolute !important;
+  top: 16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(1160px, calc(100% - 56px)) !important;
+  z-index: 99 !important;
+}
+
+.pill-nav-container .pill-nav {
+  width: 100% !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* The logo is the mark, not a button. */
 .pill-nav-container .pill-logo {
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
-  padding: 0;
-  margin: 0 10px 0 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  background: transparent;
-  overflow: visible;
-  box-shadow: none;
+  width: 28px !important;
+  height: 28px !important;
+  flex: 0 0 28px !important;
+  margin: 0 18px 0 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
 }
 
 .pill-nav-container .pill-logo img {
-  width: 30px;
-  height: 30px;
-  max-width: 30px;
-  max-height: 30px;
-  object-fit: contain;
-  display: block;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  width: 28px !important;
+  height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  object-fit: contain !important;
+  display: block !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-@media (max-width: 600px) {
+/* Remove the large enclosing capsule. */
+.pill-nav-container .pill-nav-items {
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.pill-nav-container .pill-list {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.pill-nav-container .pill-list > li {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Quiet individual links. Hover uses the existing green/purple language. */
+.pill-nav-container .pill {
+  height: 32px !important;
+  min-width: 0 !important;
+  padding: 0 11px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid transparent !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  color: #96969a !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: .01em !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease !important;
+}
+
+.pill-nav-container .pill::after,
+.pill-nav-container .pill .hover-circle {
+  display: none !important;
+}
+
+.pill-nav-container .pill .label-stack {
+  line-height: 1 !important;
+}
+
+.pill-nav-container .pill .pill-label,
+.pill-nav-container .pill .pill-label-hover {
+  position: static !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+.pill-nav-container .pill .pill-label-hover {
+  display: none !important;
+}
+
+.pill-nav-container .pill:hover,
+.pill-nav-container .pill.is-active {
+  color: #edebe6 !important;
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,255,255,.075) !important;
+  transform: none !important;
+}
+
+/* GitHub remains a quiet utility action. */
+.pill-nav-container .pill-github {
+  gap: 6px !important;
+  color: #96969a !important;
+}
+
+.pill-nav-container .pill-github svg {
+  width: 13px !important;
+  height: 13px !important;
+  fill: currentColor !important;
+  opacity: .8;
+}
+
+.pill-nav-container .pill-github:hover svg {
+  color: #a8d77b !important;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .pill-nav-container {
+    top: 12px !important;
+    width: calc(100% - 34px) !important;
+  }
+
+  .pill-nav-container .pill-nav {
+    height: 36px !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
   .pill-nav-container .pill-logo {
-    width: 32px;
-    height: 32px;
-    flex-basis: 32px;
-    margin-right: 7px;
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+    margin-right: 0 !important;
   }
 
   .pill-nav-container .pill-logo img {
-    width: 27px;
-    height: 27px;
-    max-width: 27px;
-    max-height: 27px;
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+  .pill-nav-container .mobile-menu-button {
+    width: 34px !important;
+    height: 34px !important;
+    border: 1px solid rgba(255,255,255,.075) !important;
+    border-radius: 8px !important;
+    background: rgba(255,255,255,.018) !important;
   }
 }
